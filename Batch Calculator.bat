@@ -2,7 +2,7 @@
 setlocal
 title Batch Calculator
 echo Program Name: Batch Calculator
-echo Version: 1.0.2
+echo Version: 1.0.3
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -114,6 +114,7 @@ echo.
 set Clear=
 set /p Clear="Are you sure you want to clear your equation %Equation%=? (Yes/No) "
 if /i "%Clear%"=="Yes" goto "Clear"
+if /i "%Clear%"=="No" cls
 if /i "%Clear%"=="No" goto "Start"
 echo Invalid syntax!
 goto "10"
