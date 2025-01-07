@@ -8,6 +8,7 @@ echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
 echo Sponsor: https://github.com/sponsors/YonatanReuvenIsraeli
 set Equation=
+set errorlevel=
 echo.
 goto "Start"
 
@@ -94,7 +95,8 @@ goto "Start"
 set /a Result=%Equation% > nul 2>&1
 if not "%errorlevel%"=="0" goto "Error"
 echo.
-echo %Equation%= %Result% Press any key to continue.
+if /i "%Result%"=="" echo %Equation%= Press any key to continue.
+if /i not "%Result%"=="" echo %Equation%= %Result% Press any key to continue.
 set Result=
 pause > nul 2>&1
 set Equation=
