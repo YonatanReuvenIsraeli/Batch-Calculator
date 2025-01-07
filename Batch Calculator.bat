@@ -2,7 +2,7 @@
 setlocal
 title Batch Calculator
 echo Program Name: Batch Calculator
-echo Version: 1.0.11
+echo Version: 1.0.12
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -93,10 +93,10 @@ cls
 goto "Start"
 
 :"9"
-set /a Result=%Equation% > nul 2>&1
 echo.
-if /i "%Result%"=="" echo %Equation%= Press any key to continue.
-if /i not "%Result%"=="" echo %Equation%= %Result% Press any key to continue.
+set /a Result=%Equation%
+if /i not "%Result%"=="" echo %Equation%= %Result%
+echo Press any key to continue.
 set Result=
 pause > nul 2>&1
 set Equation=
