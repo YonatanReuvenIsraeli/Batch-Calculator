@@ -2,7 +2,7 @@
 setlocal
 title Batch Calculator
 echo Program Name: Batch Calculator
-echo Version: 1.0.7
+echo Version: 1.0.8
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -14,7 +14,7 @@ goto "Start"
 :"Start"
 echo Current equation: %Equation%=
 echo.
-echo [1] Digit(s).
+echo [1] Enter digit(s).
 echo.
 echo [2] Add.
 echo [3] Subtract.
