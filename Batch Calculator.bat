@@ -2,13 +2,12 @@
 setlocal
 title Batch Calculator
 echo Program Name: Batch Calculator
-echo Version: 1.0.4
+echo Version: 1.0.5
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
 echo Sponsor: https://github.com/sponsors/YonatanReuvenIsraeli
 set Equation=
-set errorlevel=
 echo.
 goto "Start"
 
@@ -93,21 +92,12 @@ goto "Start"
 
 :"9"
 set /a Result=%Equation% > nul 2>&1
-if not "%errorlevel%"=="0" goto "Error"
 echo.
 if /i "%Result%"=="" echo %Equation%= Press any key to continue.
 if /i not "%Result%"=="" echo %Equation%= %Result% Press any key to continue.
 set Result=
 pause > nul 2>&1
 set Equation=
-cls
-goto "Start"
-
-:"Error"
-echo There has been a syntax error in your equation %Equation%=! Press any key to continue.
-pause > nul 2>&1
-set Equation=
-set errorlevel=0
 cls
 goto "Start"
 
