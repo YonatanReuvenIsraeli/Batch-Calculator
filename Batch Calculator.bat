@@ -2,7 +2,7 @@
 setlocal
 title Batch Calculator
 echo Program Name: Batch Calculator
-echo Version: 1.0.8
+echo Version: 1.0.9
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -22,8 +22,8 @@ echo [4] Multiply.
 echo [5] Divide.
 echo [6] Modulus.
 echo.
-echo [7] Open parentheses.
-echo [8] Closed parentheses.
+echo [7] Opening parentheses.
+echo [8] Closing parentheses.
 echo.
 echo [9] Calculate.
 echo [10] Clear.
