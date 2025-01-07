@@ -2,7 +2,7 @@
 setlocal
 title Batch Calculator
 echo Program Name: Batch Calculator
-echo Version: 1.0.1
+echo Version: 1.0.2
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -95,6 +95,7 @@ set /a Result=%Equation% > nul 2>&1
 if not "%errorlevel%"=="0" goto "Error"
 echo.
 echo %Equation%= %Result% Press any key to continue.
+set Result=
 pause > nul 2>&1
 set Equation=
 cls
@@ -104,6 +105,7 @@ goto "Start"
 echo There has been a syntax error in your equation %Equation%=! Press any key to continue.
 pause > nul 2>&1
 set Equation=
+set errorlevel=0
 cls
 goto "Start"
 
