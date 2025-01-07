@@ -2,7 +2,7 @@
 setlocal
 title Batch Calculator
 echo Program Name: Batch Calculator
-echo Version: 1.0.6
+echo Version: 1.0.7
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -117,5 +117,15 @@ cls
 goto "Start"
 
 :"11"
+echo.
+set Close=
+set /p Close="Are you sure you want to close this batch file? (Yes/No) "
+if /i "%Close%"=="Yes" goto "Close"
+if /i "%Close%"=="No" cls
+if /i "%Close%"=="No" goto "Start"
+echo Invalid syntax!
+goto "11"
+
+:"Close"
 endlocal
 exit
