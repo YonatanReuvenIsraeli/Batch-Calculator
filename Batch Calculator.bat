@@ -2,7 +2,7 @@
 setlocal
 title Batch Calculator
 echo Program Name: Batch Calculator
-echo Version: 1.0.12
+echo Version: 1.0.13
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -52,43 +52,43 @@ goto "Start"
 :"1"
 echo.
 set /p Number="Enter digit(s). "
-set Equation=%Equation%%Number% 
+set Equation=%Equation%%Number%
 set Number=
 cls
 goto "Start"
 
 :"2"
-set Equation=%Equation%+ 
+set Equation=%Equation%+
 cls
 goto "Start"
 
 :"3"
-set Equation=%Equation%- 
+set Equation=%Equation%-
 cls
 goto "Start"
 
 :"4"
-set Equation=%Equation%* 
+set Equation=%Equation%*
 cls
 goto "Start"
 
 :"5"
-set Equation=%Equation%/ 
+set Equation=%Equation%/
 cls
 goto "Start"
 
 :"6"
-set Equation=%Equation%%%% 
+set Equation=%Equation%%%%
 cls
 goto "Start"
 
 :"7"
-set Equation=%Equation%( 
+set Equation=%Equation%(
 cls
 goto "Start"
 
 :"8"
-set Equation=%Equation%) 
+set Equation=%Equation%)
 cls
 goto "Start"
 
