@@ -2,7 +2,7 @@
 setlocal
 title Batch Calculator
 echo Program Name: Batch Calculator
-echo Version: 2.0.5
+echo Version: 2.0.6
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -14,16 +14,16 @@ goto "CheckExist"
 :"CheckExist"
 if exist "History.txt" goto "Exist"
 echo.
-goto "Begin"
+goto "Start"
 
 :"Exist"
 set Exist=True
 echo.
-echo Please temporary rename to something else or temporary move to another location "History.txt" in order for this batch file to proceed. "History.txt" is not a system file. "History.txt" is located in "%cd%". Press any key to continue when "History.txt" is renamed to something else or moved to another location. This batch file will let you know when you can rename it back to its original name or move it back to its original location.
+echo Please temporary rename to something else or temporary move to another location "History.txt" in order for this batch file to proceed. "History.txt" is not a system file. "History.txt" is located in the folder you ran this batch file from. Press any key to continue when "History.txt" is renamed to something else or moved to another location. This batch file will let you know when you can rename it back to its original name or move it back to its original location.
 pause > nul 2>&1
 goto "CheckExist"
 
-:"Begin"
+:"Start"
 echo EQUATION IS RESTRICTED TO 32-BITS! MAKE SURE YOU DO NOT EXCEED 32-BITS IN ANY PART OF THE EQUATION!
 echo.
 echo Saving equation history is %History%.
@@ -69,7 +69,7 @@ if /i "%Input%"=="14" goto "14"
 if /i "%Input%"=="15" goto "15"
 echo Invalid syntax!
 echo.
-goto "Begin"
+goto "Start"
 
 :"1"
 echo.
@@ -77,42 +77,42 @@ set /p Number="Enter digit(s). "
 set Equation=%Equation%%Number%
 set Number=
 cls
-goto "Begin"
+goto "Start"
 
 :"2"
 set Equation=%Equation%+
 cls
-goto "Begin"
+goto "Start"
 
 :"3"
 set Equation=%Equation%-
 cls
-goto "Begin"
+goto "Start"
 
 :"4"
 set Equation=%Equation%*
 cls
-goto "Begin"
+goto "Start"
 
 :"5"
 set Equation=%Equation%/
 cls
-goto "Begin"
+goto "Start"
 
 :"6"
 set Equation=%Equation%%%%
 cls
-goto "Begin"
+goto "Start"
 
 :"7"
 set Equation=%Equation%(
 cls
-goto "Begin"
+goto "Start"
 
 :"8"
 set Equation=%Equation%)
 cls
-goto "Begin"
+goto "Start"
 
 :"9"
 echo.
@@ -125,7 +125,7 @@ set Result=
 pause > nul 2>&1
 set Equation=
 cls
-goto "Begin"
+goto "Start"
 
 :"Error"
 echo Press any key to continue.
@@ -134,7 +134,7 @@ set Result=
 pause > nul 2>&1
 set Equation=
 cls
-goto "Begin"
+goto "Start"
 
 :"10"
 echo.
@@ -142,14 +142,14 @@ set Clear=
 set /p Clear="Are you sure you want to clear your equation %Equation%=? (Yes/No) "
 if /i "%Clear%"=="Yes" goto "Clear"
 if /i "%Clear%"=="No" cls
-if /i "%Clear%"=="No" goto "Begin"
+if /i "%Clear%"=="No" goto "Start"
 echo Invalid syntax!
 goto "10"
 
 :"Clear"
 set Equation=
 cls
-goto "Begin"
+goto "Start"
 
 :"11"
 if exist "History.txt" type "History.txt"
@@ -158,38 +158,38 @@ echo.
 echo Press any key to continue.
 pause > nul 2>&1
 cls
-goto "Begin"
+goto "Start"
 
 :"12"
 if "%History%"=="On" goto "Off"
 echo History is already off! Press any key to continue.
 pause > nul 2>&1
 cls
-goto "Begin"
+goto "Start"
 
 :"Off"
 set History=off
 cls
-goto "Begin"
+goto "Start"
 
 :"13"
 if "%History%"=="off" goto "On"
 echo History is already on! Press any key to continue.
 pause > nul 2>&1
 cls
-goto "Begin"
+goto "Start"
 
 :"On"
 set History=on
 cls
-goto "Begin"
+goto "Start"
 
 :"14"
 if exist "History.txt" goto "SureClear"
 echo There is no history to clear! Press any key to continue.
 pause > nul 2>&1
 cls
-goto "Begin"
+goto "Start"
 
 :"SureClear"
 echo.
@@ -203,7 +203,7 @@ goto "SureClear"
 :"Delete"
 del "History.txt" /f /q > nul 2>&1
 cls
-goto "Begin"
+goto "Start"
 
 :"15"
 if /i "%Exist%"=="True" goto "ExistDone"
@@ -221,7 +221,7 @@ set Close=
 set /p Close="Are you sure you want to close this batch file? (Yes/No) "
 if /i "%Close%"=="Yes" goto "Close"
 if /i "%Close%"=="No" cls
-if /i "%Close%"=="No" goto "Begin"
+if /i "%Close%"=="No" goto "Start"
 echo Invalid syntax!
 goto "Close"
 
