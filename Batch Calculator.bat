@@ -2,7 +2,7 @@
 setlocal
 title Batch Calculator
 echo Program Name: Batch Calculator
-echo Version: 2.0.6
+echo Version: 2.0.7
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -138,15 +138,15 @@ goto "Start"
 
 :"10"
 echo.
-set Clear=
-set /p Clear="Are you sure you want to clear your equation %Equation%=? (Yes/No) "
-if /i "%Clear%"=="Yes" goto "Clear"
-if /i "%Clear%"=="No" cls
-if /i "%Clear%"=="No" goto "Start"
+set ClearEquation=
+set /p ClearEquation="Are you sure you want to clear your equation %Equation%=? (Yes/No) "
+if /i "%ClearEquation%"=="Yes" goto "ClearEquation"
+if /i "%ClearEquation%"=="No" cls
+if /i "%ClearEquation%"=="No" goto "Start"
 echo Invalid syntax!
 goto "10"
 
-:"Clear"
+:"ClearEquation"
 set Equation=
 cls
 goto "Start"
@@ -193,14 +193,14 @@ goto "Start"
 
 :"SureClear"
 echo.
-set Delete=
-set /p Delete="Are yuo sure you want to clear your equation history? (Yes/No) "
-if /i "%Delete%"=="Yes" goto "Delete"
-if /i "%Delete%"=="No" goto "Off"
+set ClearHistory=
+set /p ClearHistory="Are you sure you want to clear your equation history? (Yes/No) "
+if /i "%ClearHistory%"=="Yes" goto "ClearHistory"
+if /i "%ClearHistory%"=="No" goto "Start"
 echo Invalid syntax!
 goto "SureClear"
 
-:"Delete"
+:"ClearHistory"
 del "History.txt" /f /q > nul 2>&1
 cls
 goto "Start"
