@@ -2,7 +2,7 @@
 setlocal
 title Batch Calculator
 echo Program Name: Batch Calculator
-echo Version: 2.0.4
+echo Version: 2.0.5
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -14,7 +14,7 @@ goto "CheckExist"
 :"CheckExist"
 if exist "History.txt" goto "Exist"
 echo.
-goto "Start"
+goto "Begin"
 
 :"Exist"
 set Exist=True
@@ -23,7 +23,7 @@ echo Please temporary rename to something else or temporary move to another loca
 pause > nul 2>&1
 goto "CheckExist"
 
-:"Start"
+:"Begin"
 echo EQUATION IS RESTRICTED TO 32-BITS! MAKE SURE YOU DO NOT EXCEED 32-BITS IN ANY PART OF THE EQUATION!
 echo.
 echo Saving equation history is %History%.
@@ -69,7 +69,7 @@ if /i "%Input%"=="14" goto "14"
 if /i "%Input%"=="15" goto "15"
 echo Invalid syntax!
 echo.
-goto "Start"
+goto "Begin"
 
 :"1"
 echo.
@@ -77,42 +77,42 @@ set /p Number="Enter digit(s). "
 set Equation=%Equation%%Number%
 set Number=
 cls
-goto "Start"
+goto "Begin"
 
 :"2"
 set Equation=%Equation%+
 cls
-goto "Start"
+goto "Begin"
 
 :"3"
 set Equation=%Equation%-
 cls
-goto "Start"
+goto "Begin"
 
 :"4"
 set Equation=%Equation%*
 cls
-goto "Start"
+goto "Begin"
 
 :"5"
 set Equation=%Equation%/
 cls
-goto "Start"
+goto "Begin"
 
 :"6"
 set Equation=%Equation%%%%
 cls
-goto "Start"
+goto "Begin"
 
 :"7"
 set Equation=%Equation%(
 cls
-goto "Start"
+goto "Begin"
 
 :"8"
 set Equation=%Equation%)
 cls
-goto "Start"
+goto "Begin"
 
 :"9"
 echo.
@@ -125,7 +125,7 @@ set Result=
 pause > nul 2>&1
 set Equation=
 cls
-goto "Start"
+goto "Begin"
 
 :"Error"
 echo Press any key to continue.
@@ -134,7 +134,7 @@ set Result=
 pause > nul 2>&1
 set Equation=
 cls
-goto "Start"
+goto "Begin"
 
 :"10"
 echo.
@@ -142,14 +142,14 @@ set Clear=
 set /p Clear="Are you sure you want to clear your equation %Equation%=? (Yes/No) "
 if /i "%Clear%"=="Yes" goto "Clear"
 if /i "%Clear%"=="No" cls
-if /i "%Clear%"=="No" goto "Start"
+if /i "%Clear%"=="No" goto "Begin"
 echo Invalid syntax!
 goto "10"
 
 :"Clear"
 set Equation=
 cls
-goto "Start"
+goto "Begin"
 
 :"11"
 if exist "History.txt" type "History.txt"
@@ -158,38 +158,38 @@ echo.
 echo Press any key to continue.
 pause > nul 2>&1
 cls
-goto "Start"
+goto "Begin"
 
 :"12"
 if "%History%"=="On" goto "Off"
 echo History is already off! Press any key to continue.
 pause > nul 2>&1
 cls
-goto "Start"
+goto "Begin"
 
 :"Off"
 set History=off
 cls
-goto "Start"
+goto "Begin"
 
 :"13"
 if "%History%"=="off" goto "On"
 echo History is already on! Press any key to continue.
 pause > nul 2>&1
 cls
-goto "Start"
+goto "Begin"
 
 :"On"
 set History=on
 cls
-goto "Start"
+goto "Begin"
 
 :"14"
 if exist "History.txt" goto "SureClear"
 echo There is no history to clear! Press any key to continue.
 pause > nul 2>&1
 cls
-goto "Start"
+goto "Begin"
 
 :"SureClear"
 echo.
@@ -203,7 +203,7 @@ goto "SureClear"
 :"Delete"
 del "History.txt" /f /q > nul 2>&1
 cls
-goto "Start"
+goto "Begin"
 
 :"15"
 if /i "%Exist%"=="True" goto "ExistDone"
@@ -221,7 +221,7 @@ set Close=
 set /p Close="Are you sure you want to close this batch file? (Yes/No) "
 if /i "%Close%"=="Yes" goto "Close"
 if /i "%Close%"=="No" cls
-if /i "%Close%"=="No" goto "Start"
+if /i "%Close%"=="No" goto "Begin"
 echo Invalid syntax!
 goto "Close"
 
