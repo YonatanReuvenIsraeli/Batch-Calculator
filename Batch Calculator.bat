@@ -2,7 +2,7 @@
 setlocal
 title Batch Calculator
 echo Program Name: Batch Calculator
-echo Version: 2.0.7
+echo Version: 2.0.8
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -206,25 +206,24 @@ cls
 goto "Start"
 
 :"15"
-if /i "%Exist%"=="True" goto "ExistDone"
-goto "SureClose"
-
-:"ExistDone"
-echo.
-echo You can now rename or move back the file back to "History.txt". Press any key to continue.
-pause > nul 2>&1
-goto "SureClose" 
-
-:"SureClose"
 echo.
 set Close=
-set /p Close="Are you sure you want to close this batch file? (Yes/No) "
-if /i "%Close%"=="Yes" goto "Close"
+set /p Close="Are you sure you want to close this batch file? Closing this batch file will automaticly clear your equation history. (Yes/No) "
+if /i "%Close%"=="Yes" goto "AutoClear"
 if /i "%Close%"=="No" cls
 if /i "%Close%"=="No" goto "Start"
 echo Invalid syntax!
 goto "Close"
 
-:"Close"
+:"AutoClear"
+del "History.txt" /f /q > nul 2>&1
+if /i "%Exist%"=="True" goto "ExistDone"
+endlocal
+exit
+
+:"ExistDone"
+echo.
+echo You can now rename or move back the file back to "History.txt". Press any key to close this batch file.
+pause > nul 2>&1
 endlocal
 exit
