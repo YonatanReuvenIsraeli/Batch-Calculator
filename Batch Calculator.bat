@@ -2,7 +2,7 @@
 setlocal
 title Batch Calculator
 echo Program Name: Batch Calculator
-echo Version: 2.0.2
+echo Version: 2.0.3
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -51,7 +51,7 @@ echo.
 echo [15] Close.
 echo.
 set Input=
-set /p Input="What do you want to do? (1-11) "
+set /p Input="What do you want to do? (1-15) "
 if /i "%Input%"=="1" goto "1"
 if /i "%Input%"=="2" goto "2"
 if /i "%Input%"=="3" goto "3"
