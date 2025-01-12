@@ -2,18 +2,18 @@
 setlocal
 title Batch Calculator
 echo Program Name: Batch Calculator
-echo Version: 2.0.1
+echo Version: 2.0.2
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
 echo Sponsor: https://github.com/sponsors/YonatanReuvenIsraeli
 set History=off
 set Equation=
-echo.
 goto "CheckExist"
 
 :"CheckExist"
 if exist "History.txt" goto "Exist"
+echo.
 goto "Start"
 
 :"Exist"
