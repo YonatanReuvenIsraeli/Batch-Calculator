@@ -1,4 +1,4 @@
-# Batch Calculator v2.0.8
+# Batch Calculator v2.0.9
 A basic batch calculator.
 
 Good to use in Windows Preinstallation Environment and Windows Recovery Environment, where no other calculator is available.
