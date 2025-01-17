@@ -2,7 +2,7 @@
 setlocal
 title Batch Calculator
 echo Program Name: Batch Calculator
-echo Version: 2.0.10
+echo Version: 2.0.11
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -120,7 +120,6 @@ set /a Result=%Equation%
 if "%errorlevel%"=="0" echo %Equation%=%Result%
 if not "%errorlevel%"=="0" goto "Error"
 if /i "%History%"=="on" (echo %Equation%=%Result%) >> "History.txt"
-echo.
 echo Press any key to continue.
 set Result=
 pause > nul 2>&1
@@ -155,9 +154,8 @@ goto "Start"
 :"11"
 if exist "History.txt" echo.
 if exist "History.txt" type "History.txt"
-if not exist "History.txt" echo There is no history to show!
-echo.
-echo Press any key to continue.
+if not exist "History.txt" echo There is no history to show! Press any key to continue.
+if exist "History.txt" echo Press any key to continue.
 pause > nul 2>&1
 cls
 goto "Start"
