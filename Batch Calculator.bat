@@ -2,7 +2,7 @@
 setlocal
 title Batch Calculator
 echo Program Name: Batch Calculator
-echo Version: 3.0.2
+echo Version: 3.0.3
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -151,14 +151,21 @@ cls
 goto "Start"
 
 :"10"
+if /i "%Entry%"=="" goto "NoEntry"
 echo.
 set ClearEntry=
 set /p ClearEntry="Are you sure you want to clear your last entry of %Entry%? (Yes/No) "
-if /i "%ClearEntry%"=="Yes" goto "Clear"
+if /i "%ClearEntry%"=="Yes" goto "ClearEntry"
 if /i "%ClearEntry%"=="No" cls
 if /i "%ClearEntry%"=="No" goto "Start"
 echo Invalid syntax!
 goto "10"
+
+:"NoEntry"
+echo There is no entry to clear! Press any key to continue.
+pause > nul 2>&1
+cls
+goto "Start"
 
 :"ClearEntry"
 set Entry=
@@ -166,6 +173,7 @@ cls
 goto "Start"
 
 :"11"
+if /i "%Equation%%Entry%"=="" goto "NoEquation"
 echo.
 set ClearEquation=
 set /p ClearEquation="Are you sure you want to clear your equation of %Equation%%Entry%? (Yes/No) "
@@ -174,6 +182,12 @@ if /i "%ClearEquation%"=="No" cls
 if /i "%ClearEquation%"=="No" goto "Start"
 echo Invalid syntax!
 goto "11"
+
+:"NoEquation"
+echo There is no equation to clear! Press any key to continue.
+pause > nul 2>&1
+cls
+goto "Start"
 
 :"ClearEquation"
 set Equation=
