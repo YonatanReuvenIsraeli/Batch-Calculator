@@ -2,7 +2,7 @@
 setlocal
 title Batch Calculator
 echo Program Name: Batch Calculator
-echo Version: 3.0.0
+echo Version: 3.0.1
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -136,7 +136,7 @@ echo Press any key to continue.
 set Result=
 pause > nul 2>&1
 set Equation=
-set Current=
+set Entry=
 cls
 goto "Start"
 
