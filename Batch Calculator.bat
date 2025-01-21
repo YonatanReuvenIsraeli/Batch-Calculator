@@ -2,7 +2,7 @@
 setlocal
 title Batch Calculator
 echo Program Name: Batch Calculator
-echo Version: 3.0.1
+echo Version: 3.0.2
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -176,8 +176,8 @@ echo Invalid syntax!
 goto "11"
 
 :"ClearEquation"
-set Entry=
 set Equation=
+set Entry=
 cls
 goto "Start"
 
