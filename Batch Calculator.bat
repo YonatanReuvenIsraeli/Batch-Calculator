@@ -2,7 +2,7 @@
 setlocal
 title Batch Calculator
 echo Program Name: Batch Calculator
-echo Version: 3.0.5
+echo Version: 3.0.6
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -10,16 +10,15 @@ echo Sponsor: https://github.com/sponsors/YonatanReuvenIsraeli
 set History=Off
 set Equation=
 set Entry=
+echo.
 goto "CheckExist"
 
 :"CheckExist"
 if exist "History.txt" goto "Exist"
-echo.
 goto "Start"
 
 :"Exist"
 set Exist=True
-echo.
 echo Please temporary rename to something else or temporary move to another location "History.txt" in order for this batch file to proceed. "History.txt" is not a system file. "History.txt" is located in the folder you ran this batch file from. Press any key to continue when "History.txt" is renamed to something else or moved to another location. This batch file will let you know when you can rename it back to its original name or move it back to its original location.
 pause > nul 2>&1
 goto "CheckExist"
@@ -77,7 +76,7 @@ goto "Start"
 
 :"1"
 echo.
-set /p Number="Enter digit(s). "
+set /p Number="Enter digit(s) no decimals. "
 set Equation=%Equation%%Entry%
 set Entry=%Number%
 set Number=
