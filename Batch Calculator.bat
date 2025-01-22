@@ -2,7 +2,7 @@
 setlocal
 title Batch Calculator
 echo Program Name: Batch Calculator
-echo Version: 3.0.3
+echo Version: 3.0.4
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -27,7 +27,7 @@ goto "CheckExist"
 :"Start"
 echo EQUATION IS RESTRICTED TO 32-BITS! MAKE SURE YOU DO NOT EXCEED 32-BITS IN ANY PART OF THE EQUATION!
 echo.
-echo Saving equation history is %History%.
+echo Saving history: %History%
 echo Current equation: %Equation%%Entry%
 echo.
 echo [1] Enter digit(s).
@@ -212,19 +212,19 @@ cls
 goto "Start"
 
 :"Off"
-set History=off
+set History=Off
 cls
 goto "Start"
 
 :"14"
-if "%History%"=="off" goto "On"
+if "%History%"=="Off" goto "On"
 echo History is already on! Press any key to continue.
 pause > nul 2>&1
 cls
 goto "Start"
 
 :"On"
-set History=on
+set History=On
 cls
 goto "Start"
 
