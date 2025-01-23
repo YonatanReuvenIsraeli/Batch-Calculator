@@ -2,7 +2,7 @@
 setlocal
 title Batch Calculator
 echo Program Name: Batch Calculator
-echo Version: 3.0.7
+echo Version: 3.0.8
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -27,7 +27,7 @@ goto "CheckExist"
 echo EQUATION IS RESTRICTED TO 32-BITS! MAKE SURE YOU DO NOT EXCEED 32-BITS IN ANY PART OF THE EQUATION!
 echo.
 echo Saving history: %History%
-echo Current equation: %Equation%%Entry%
+if /i not "%Equation%%Entry%"=="" echo Current equation: %Equation%%Entry%
 echo.
 echo [1] Enter digit(s).
 echo.
@@ -71,14 +71,36 @@ if /i "%Input%"=="14" goto "14"
 if /i "%Input%"=="15" goto "15"
 if /i "%Input%"=="16" goto "16"
 echo Invalid syntax!
-echo.
 goto "Start"
 
 :"1"
-echo.
-set /p Number="Enter digit(s) no decimals. "
+cls
+if /i "%Number%"=="" echo.
+if /i not "%Number%"=="" echo Current number: %Number%
+set /p Digit="Enter each digit one at a time. No decimals. Enter "Done" when you are done entering all digits. (0-9/Done) "
+if /i "%Digit%"=="Done" goto "Number"
+if /i "%Digit%"=="0" goto "Digit"
+if /i "%Digit%"=="1" goto "Digit"
+if /i "%Digit%"=="2" goto "Digit"
+if /i "%Digit%"=="3" goto "Digit"
+if /i "%Digit%"=="4" goto "Digit"
+if /i "%Digit%"=="5" goto "Digit"
+if /i "%Digit%"=="6" goto "Digit"
+if /i "%Digit%"=="7" goto "Digit"
+if /i "%Digit%"=="8" goto "Digit"
+if /i "%Digit%"=="9" goto "Digit"
+echo Invalid syntax! Press any key to continue.
+pause > nul 2>&1
+goto "1"
+
+:"Digit"
+set Number=%Number%%Digit%
+goto "1"
+
+:"Number"
 set Equation=%Equation%%Entry%
 set Entry=%Number%
+set Digit=
 set Number=
 cls
 goto "Start"
@@ -256,7 +278,7 @@ if /i "%Close%"=="Yes" goto "AutoClear"
 if /i "%Close%"=="No" cls
 if /i "%Close%"=="No" goto "Start"
 echo Invalid syntax!
-goto "Close"
+goto "16"
 
 :"AutoClear"
 del "History.txt" /f /q > nul 2>&1
