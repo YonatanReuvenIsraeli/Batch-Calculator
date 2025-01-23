@@ -2,7 +2,7 @@
 setlocal
 title Batch Calculator
 echo Program Name: Batch Calculator
-echo Version: 3.0.9
+echo Version: 3.0.10
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -29,7 +29,7 @@ echo.
 echo Saving history: %History%
 if /i not "%Equation%%Entry%"=="" echo Current equation: %Equation%%Entry%
 echo.
-echo [1] Enter digit(s).
+echo [1] Enter number.
 echo.
 echo [2] Plus.
 echo [3] Minus.
