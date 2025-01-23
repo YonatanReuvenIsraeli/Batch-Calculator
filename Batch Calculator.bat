@@ -2,7 +2,7 @@
 setlocal
 title Batch Calculator
 echo Program Name: Batch Calculator
-echo Version: 3.0.8
+echo Version: 3.0.9
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -75,7 +75,6 @@ goto "Start"
 
 :"1"
 cls
-if /i "%Number%"=="" echo.
 if /i not "%Number%"=="" echo Current number: %Number%
 set /p Digit="Enter each digit one at a time. No decimals. Enter "Done" when you are done entering all digits. (0-9/Done) "
 if /i "%Digit%"=="Done" goto "Number"
