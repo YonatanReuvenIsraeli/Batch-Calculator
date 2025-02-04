@@ -1,8 +1,8 @@
 @echo off
-setlocal
 title Batch Calculator
+setlocal
 echo Program Name: Batch Calculator
-echo Version: 3.0.11
+echo Version: 3.0.12
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
