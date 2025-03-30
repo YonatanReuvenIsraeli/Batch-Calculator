@@ -2,7 +2,7 @@
 title Batch Calculator
 setlocal
 echo Program Name: Batch Calculator
-echo Version: 3.0.13
+echo Version: 3.0.14
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -75,6 +75,8 @@ goto "Start"
 
 :"1"
 cls
+echo EQUATION IS RESTRICTED TO 32-BITS! MAKE SURE YOU DO NOT EXCEED 32-BITS IN ANY PART OF THE EQUATION!
+echo.
 if /i not "%Number%"=="" echo Current number: %Number%
 if /i not "%Number%"=="" echo.
 set /p Digit="Enter each digit one at a time. No decimals. Enter "Done" when you are done entering all digits. (0-9/Done) "
