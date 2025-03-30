@@ -2,7 +2,7 @@
 title Batch Calculator
 setlocal
 echo Program Name: Batch Calculator
-echo Version: 3.0.14
+echo Version: 3.0.15
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -26,7 +26,7 @@ goto "CheckExist"
 :"Start"
 echo EQUATION IS RESTRICTED TO 32-BITS! MAKE SURE YOU DO NOT EXCEED 32-BITS IN ANY PART OF THE EQUATION!
 echo.
-echo Saving history: %History%
+echo Saving equation history: %History%
 if /i not "%Equation%%Entry%"=="" echo Current equation: %Equation%%Entry%
 echo.
 echo [1] Enter number.
