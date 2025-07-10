@@ -2,7 +2,7 @@
 title Batch Calculator
 setlocal
 echo Program Name: Batch Calculator
-echo Version: 3.0.16
+echo Version: 3.0.17
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -19,7 +19,7 @@ goto "Start"
 
 :"Exist"
 set Exist=True
-echo Please temporarily rename to something else or temporarily move to another location "History.txt" in order for this batch file to proceed. "History.txt" is not a system file. "History.txt" is located in the folder you ran this batch file from. Press any key to continue when "History.txt" is renamed to something else or moved to another location. This batch file will let you know when you can rename it back to its original name or move it back to its original location.
+echo Please temporarily rename to something else or temporarily move to another location "History.txt" in order for this batch file to proceed. "History.txt" is not a system file. "History.txt" is located in the folder "%cd%". Press any key to continue when "History.txt" is renamed to something else or moved to another location. This batch file will let you know when you can rename it back to its original name or move it back to its original location.
 pause > nul 2>&1
 goto "CheckExist"
 
