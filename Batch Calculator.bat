@@ -2,7 +2,7 @@
 title Batch Calculator
 setlocal
 echo Program Name: Batch Calculator
-echo Version: 3.0.17
+echo Version: 3.0.18
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -290,7 +290,7 @@ exit
 
 :"ExistDone"
 echo.
-echo You can now rename or move back the file back to "History.txt". Press any key to close this batch file.
+echo You can now rename or move the file back to "History.txt". Press any key to close this batch file.
 pause > nul 2>&1
 endlocal
 exit
