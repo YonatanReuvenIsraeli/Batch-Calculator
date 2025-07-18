@@ -2,7 +2,7 @@
 title Batch Calculator
 setlocal
 echo Program Name: Batch Calculator
-echo Version: 3.1.1
+echo Version: 3.1.2
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -113,7 +113,7 @@ echo Invalid syntax!
 goto "ClearNumber"
 
 :"NoDigits"
-echo There is no digits to clear! Press any key to continue.
+echo There are no digits to clear! Press any key to continue.
 pause > nul 2>&1
 cls
 goto "1"
