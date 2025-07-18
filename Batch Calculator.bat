@@ -2,7 +2,7 @@
 title Batch Calculator
 setlocal
 echo Program Name: Batch Calculator
-echo Version: 3.0.18
+echo Version: 3.1.0
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -79,8 +79,8 @@ echo EQUATION IS RESTRICTED TO 32-BITS! MAKE SURE YOU DO NOT EXCEED 32-BITS IN A
 echo.
 if /i not "%Number%"=="" echo Current number: %Number%
 if /i not "%Number%"=="" echo.
-set /p Digit="Enter each digit one at a time. No decimals. Enter "Done" when you are done entering all digits. (0-9/Done) "
-if /i "%Digit%"=="Done" goto "Number"
+set Digit=
+set /p Digit="Enter each digit one at a time. No decimals. Enter "Done" when you are done entering all digits. (0-9/Clear/Done) "
 if /i "%Digit%"=="0" goto "Digit"
 if /i "%Digit%"=="1" goto "Digit"
 if /i "%Digit%"=="2" goto "Digit"
@@ -91,12 +91,36 @@ if /i "%Digit%"=="6" goto "Digit"
 if /i "%Digit%"=="7" goto "Digit"
 if /i "%Digit%"=="8" goto "Digit"
 if /i "%Digit%"=="9" goto "Digit"
+if /i "%Digit%"=="Clear" goto "ClearNumber"
+if /i "%Digit%"=="Done" goto "Number"
 echo Invalid syntax! Press any key to continue.
 pause > nul 2>&1
 goto "1"
 
 :"Digit"
 set Number=%Number%%Digit%
+goto "1"
+
+:"ClearNumber"
+if /i "%Number%"=="" goto "NoDigits"
+echo.
+set ClearDigits=
+set /p ClearDigits="Are you sure you want to clear your digits of %Number%? (Yes/No) "
+if /i "%ClearDigits%"=="Yes" goto "ClearDigits"
+if /i "%ClearDigits%"=="No" cls
+if /i "%ClearDigits%"=="No" goto "Start"
+echo Invalid syntax!
+goto "ClearNumber"
+
+:"NoDigits"
+echo There is no digits to clear! Press any key to continue.
+pause > nul 2>&1
+cls
+goto "1"
+
+:"ClearDigits"
+set Number=
+cls
 goto "1"
 
 :"Number"
