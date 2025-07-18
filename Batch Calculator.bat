@@ -2,7 +2,7 @@
 title Batch Calculator
 setlocal
 echo Program Name: Batch Calculator
-echo Version: 3.1.2
+echo Version: 3.1.3
 echo License: GNU General Public License v3.0
 echo Developer: @YonatanReuvenIsraeli
 echo GitHub: https://github.com/YonatanReuvenIsraeli
@@ -299,7 +299,7 @@ goto "Start"
 :"16"
 echo.
 set Close=
-set /p Close="Are you sure you want to close this batch file? Closing this batch file will automaticly clear your equation history. (Yes/No) "
+set /p Close="Are you sure you want to close this batch file? Closing this batch file will automatically clear your equation history. (Yes/No) "
 if /i "%Close%"=="Yes" goto "AutoClear"
 if /i "%Close%"=="No" cls
 if /i "%Close%"=="No" goto "Start"
